@@ -7,9 +7,10 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "build-rollup": "rollup -c",
-    "prepare": "npm run build-rollup",
     "pub": "npm publish",
     "test": "node test"
   },
