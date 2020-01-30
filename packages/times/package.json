@@ -1,0 +1,34 @@
+{
+  "name": "@acq/times",
+  "version": "0.0.0",
+  "description": "A util tool",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "pub": "npm publish",
+    "test": "node test"
+  },
+  "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoyeungw/acq.git"
+  },
+  "keywords": [
+    "crawler",
+    "spider"
+  ],
+  "author": {
+    "name": "Hoyeung Wong",
+    "email": "hoyeungw@outlook.com",
+    "url": "https://github.com/hoyeungw"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoyeungw/acq.git"
+  },
+  "homepage": "https://github.com/hoyeungw/acq#readme"
+}
