@@ -1,6 +1,6 @@
 {
   "name": "@acq/acq",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A util tool",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -14,14 +14,12 @@
     "test": "node test"
   },
   "dependencies": {
-    "@acq/couture": "^0.0.0",
+    "@acq/couture": "^0.0.1",
     "axios": "^0.19.2",
-    "xbrief": "^0.3.1",
     "elprimero": "^0.1.32",
+    "ora": "^4.0.3",
     "veho": "^0.2.10",
-    "ora": "^4.0.3"
-  },
-  "devDependencies": {
+    "xbrief": "^0.3.1"
   },
   "repository": {
     "type": "git",
