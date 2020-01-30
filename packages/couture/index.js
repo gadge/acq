@@ -1,4 +1,4 @@
-import { ReT } from '@acq'
+import { ReT } from '@acq/enum-ret'
 import { Samples } from 'veho'
 import { Table } from 'crostab'
 

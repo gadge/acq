@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var enumRet = require('@acq');
+var enumRet = require('@acq/enum-ret');
 var veho = require('veho');
 var crostab = require('crostab');
 
