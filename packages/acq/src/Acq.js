@@ -3,30 +3,7 @@ import axios from 'axios'
 import { Couture } from '@acq/couture'
 import { GP } from 'elprimero'
 import { deco, logger, Xr } from 'xbrief'
-import { ReT } from '@acq/enum-ret'
-import { Ob } from 'veho'
-
-/**
- *
- * @param ret
- * @returns {Couture.fromSamples|Couture.fromTable|(function(*): *)}
- */
-const couture = ret => {
-  switch (ret) {
-    case ReT.table:
-      return Couture.fromTable
-    case ReT.samples:
-      return Couture.fromSamples
-    default:
-      return x => x
-  }
-}
-
-const urlBuilder = (url, params) => {
-  if (!params) return url
-  const p = Ob.entries(params).map(([k, v]) => `${k}=${v}`).join('\&')
-  return url + '?' + p
-}
+import { couture, urlBuilder } from './helpers'
 
 export class Acq {
   /**
