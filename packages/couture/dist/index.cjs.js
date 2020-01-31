@@ -7,82 +7,61 @@ var veho = require('veho');
 var crostab = require('crostab');
 
 class Couture {
-  static fromSamples(ob, {
-    id,
-    ret,
+  /**
+   *
+   * @param {Object[]} samples
+   * @param {string} title
+   * @param {number} to
+   * @param {string[]} [fields]
+   * @returns {(Table|{head: *[], rows: *[][]}|Object[]|*)}
+   */
+  static fromSamples(samples, {
+    title,
+    to,
     fields
   }) {
-    switch (ret) {
+    switch (to) {
       case enumRet.ReT.json:
-        return fields ? veho.Samples.toTable(ob, {
+        return veho.Samples.toTable(samples, {
+          title,
           fields
-        }) : veho.Samples.toTable(ob);
+        });
 
       case enumRet.ReT.table:
-        return fields ? crostab.Table.fromSamples(ob, id, null, {
+        return crostab.Table.fromSamples(samples, {
+          title,
           fields
-        }) : crostab.Table.fromSamples(ob, id);
+        });
 
       case enumRet.ReT.samples:
       default:
-        return fields ? veho.Samples.select(ob, fields) : ob;
+        return veho.Samples.select(samples, fields);
     }
   }
   /**
    *
    * @param {Table} table
-   * @param id
-   * @param ret
-   * @param fields
-   * @returns {Table|{head: *[], rows: *[][]}|*}
+   * @param {number} to
+   * @param {string[]} [fields]
+   * @returns {(Table|{head: *[], rows: *[][]}|Object[]|*)}
    */
 
 
   static fromTable(table, {
-    id,
-    ret,
+    to,
     fields
   }) {
-    switch (ret) {
+    switch (to) {
       case enumRet.ReT.json:
-        return fields ? table.select(fields).toJson : table.toJson;
+        return table.select(fields).toJson;
 
       case enumRet.ReT.samples:
-        return fields ? table.toSamples(...fields) : table.toSamples();
+        return table.toSamples(fields);
 
       case enumRet.ReT.table:
       default:
-        return fields ? table.select(fields) : table;
+        return table.select(fields);
     }
-  }
-  /**
-   *
-   * @param {*[][]} matrix
-   * @param banner
-   * @param id
-   * @param ret
-   * @param fields
-   * @returns {Table|{head: *[], rows: *[][]}|*}
-   */
-
-
-  static fromMatrix({
-    matrix,
-    banner
-  }, {
-    id,
-    ret,
-    fields
-  }) {
-    const table = crostab.Table.from({
-      matrix,
-      banner
-    });
-    return Couture.fromTable(table, {
-      id,
-      ret,
-      fields
-    });
   }
 
 }

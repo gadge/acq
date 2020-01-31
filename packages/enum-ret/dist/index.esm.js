@@ -1,8 +1,17 @@
-const ReT = {
-  samples: 0,
-  json: 1,
-  table: 2,
-  ansi: 3
-};
+const SAMPLES = 0
+const JSON = 1
+const TABLE = 2
+const ANSI = 3
 
-export { ReT };
+const ReT = {
+  SAMPLES,
+  JSON,
+  TABLE,
+  ANSI,
+  samples: SAMPLES,
+  json: JSON,
+  table: TABLE,
+  ansi: ANSI,
+}
+
+export { ReT, SAMPLES, JSON, TABLE, ANSI }

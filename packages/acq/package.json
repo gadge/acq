@@ -17,10 +17,10 @@
   "dependencies": {
     "@acq/couture": "^0.0.3",
     "axios": "^0.19.2",
-    "elprimero": "^0.1.32",
+    "elprimero": "^0.1.36",
     "ora": "^4.0.3",
-    "veho": "^0.2.10",
-    "xbrief": "^0.3.1"
+    "veho": "^0.2.14",
+    "xbrief": "^0.3.5"
   },
   "repository": {
     "type": "git",

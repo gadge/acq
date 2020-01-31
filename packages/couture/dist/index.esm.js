@@ -3,82 +3,61 @@ import { Samples } from 'veho';
 import { Table } from 'crostab';
 
 class Couture {
-  static fromSamples(ob, {
-    id,
-    ret,
+  /**
+   *
+   * @param {Object[]} samples
+   * @param {string} [title]
+   * @param {number} [to]
+   * @param {string[]} [fields]
+   * @returns {(Table|{head: *[], rows: *[][]}|Object[]|*)}
+   */
+  static fromSamples(samples, {
+    title,
+    to,
     fields
   }) {
-    switch (ret) {
+    switch (to) {
       case ReT.json:
-        return fields ? Samples.toTable(ob, {
+        return Samples.toTable(samples, {
+          title,
           fields
-        }) : Samples.toTable(ob);
+        });
 
       case ReT.table:
-        return fields ? Table.fromSamples(ob, id, null, {
+        return Table.fromSamples(samples, {
+          title,
           fields
-        }) : Table.fromSamples(ob, id);
+        });
 
       case ReT.samples:
       default:
-        return fields ? Samples.select(ob, fields) : ob;
+        return Samples.select(samples, fields);
     }
   }
   /**
    *
    * @param {Table} table
-   * @param id
-   * @param ret
-   * @param fields
-   * @returns {Table|{head: *[], rows: *[][]}|*}
+   * @param {number} to
+   * @param {string[]} [fields]
+   * @returns {(Table|{head: *[], rows: *[][]}|Object[]|*)}
    */
 
 
   static fromTable(table, {
-    id,
-    ret,
+    to,
     fields
   }) {
-    switch (ret) {
+    switch (to) {
       case ReT.json:
-        return fields ? table.select(fields).toJson : table.toJson;
+        return table.select(fields).toJson;
 
       case ReT.samples:
-        return fields ? table.toSamples(...fields) : table.toSamples();
+        return table.toSamples(fields);
 
       case ReT.table:
       default:
-        return fields ? table.select(fields) : table;
+        return table.select(fields);
     }
-  }
-  /**
-   *
-   * @param {*[][]} matrix
-   * @param banner
-   * @param id
-   * @param ret
-   * @param fields
-   * @returns {Table|{head: *[], rows: *[][]}|*}
-   */
-
-
-  static fromMatrix({
-    matrix,
-    banner
-  }, {
-    id,
-    ret,
-    fields
-  }) {
-    const table = Table.from({
-      matrix,
-      banner
-    });
-    return Couture.fromTable(table, {
-      id,
-      ret,
-      fields
-    });
   }
 
 }
