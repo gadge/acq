@@ -40,7 +40,6 @@ export class Acq {
    *
    * @param {number} from - samples: 0, table: 2
    * @param {number} to - samples: 0, json: 1, table: 2, ansi: 3
-   * @param {boolean} [easy]
    * @param {boolean} [spin=true]
    *
    * @param {Object} [configs] - rest configs passed to axios
@@ -52,7 +51,7 @@ export class Acq {
       title, url, params, configs,
       loc, args, fields
     },
-    { from, to, easy, spin = true }
+    { from, to, spin = true }
   ) {
     let spn
     if (spin) spn = ora().start(Xr('acq', title).params(params |> deco).args(args |> deco).say)
@@ -72,7 +71,7 @@ export class Acq {
 
   /**
    *
-   * @param {string|number} title
+   * @param {string|number} [title]
    * @param {string} url
    * @param {Object} [params] - parameters passed to axios
    * @param {(function(*,Object):Table|function(*):Table)} loc
@@ -80,7 +79,6 @@ export class Acq {
    * @param {*[]|[*,*][]} fields
    *
    * @param {number} to - samples: 0, table: 2
-   * @param {boolean} [easy]
    * @param {boolean} [spin=true]
    *
    * @param {Object} [configs] - rest configs passed to axios
@@ -88,8 +86,11 @@ export class Acq {
    * @returns {Promise<{fields: *[], rows: *[][]}|Table|Object[]>}
    */
   static async tab (
-    { title, url, params, loc, args, fields },
-    { to, easy, spin = true },
+    {
+      title, url, params,
+      loc, args, fields
+    },
+    { to, spin = true },
     configs
   ) {
     let spn
@@ -109,7 +110,7 @@ export class Acq {
 
   /**
    *
-   * @param {string|number} title
+   * @param {string|number} [title]
    * @param {string} url
    * @param {Object} [params]
    * @param {(function(*,Object):Object[]|function(*):Object[])} loc
@@ -117,7 +118,6 @@ export class Acq {
    * @param {*[]|[*,*][]} fields
    *
    * @param {number} to - samples: 0, json: 1, table: 2, ansi: 3
-   * @param {boolean} [easy]
    * @param {boolean} [spin=true]
    *
    * @param {Object} [configs]
@@ -125,8 +125,11 @@ export class Acq {
    * @returns {Promise<{fields: *[], rows: *[][]}|Table|Object[]>}
    */
   static async raw (
-    { title, url, params, loc, args, fields },
-    { to, easy, spin = true },
+    {
+      title, url, params,
+      loc, args, fields
+    },
+    { to, spin = true },
     configs
   ) {
     let spn

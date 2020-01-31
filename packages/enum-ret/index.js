@@ -1,6 +1,15 @@
+export const SAMPLES = 0
+export const JSON = 1
+export const TABLE = 2
+export const ANSI = 3
+
 export const ReT = {
-  samples: 0,
-  json: 1,
-  table: 2,
-  ansi: 3,
+  SAMPLES,
+  JSON,
+  TABLE,
+  ANSI,
+  samples: SAMPLES,
+  json: JSON,
+  table: TABLE,
+  ansi: ANSI,
 }
