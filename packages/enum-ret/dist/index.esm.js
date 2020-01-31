@@ -1,17 +1,8 @@
-const SAMPLES = 0
-const JSON = 1
-const TABLE = 2
-const ANSI = 3
-
 const ReT = {
-  SAMPLES,
-  JSON,
-  TABLE,
-  ANSI,
-  samples: SAMPLES,
-  json: JSON,
-  table: TABLE,
-  ansi: ANSI,
-}
+  samples: 0,
+  json: 1,
+  table: 2,
+  ansi: 3
+};
 
-export { ReT, SAMPLES, JSON, TABLE, ANSI }
+export { ReT };

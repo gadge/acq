@@ -6,8 +6,8 @@ class Couture {
   /**
    *
    * @param {Object[]} samples
-   * @param {string} [title]
-   * @param {number} [to]
+   * @param {string} title
+   * @param {number} to
    * @param {string[]} [fields]
    * @returns {(Table|{head: *[], rows: *[][]}|Object[]|*)}
    */
