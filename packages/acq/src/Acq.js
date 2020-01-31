@@ -48,7 +48,8 @@ export class Acq {
    */
   static async port (
     {
-      title, url, params, configs,
+      title,
+      url, params, configs,
       loc, args, fields
     },
     { from, to, spin = true }
@@ -87,11 +88,11 @@ export class Acq {
    */
   static async tab (
     {
-      title, url, params,
+      title,
+      url, params, configs,
       loc, args, fields
     },
     { to, spin = true },
-    configs
   ) {
     let spn
     if (spin) spn = ora().start(Xr('raw', title).params(params |> deco).args(args |> deco).toString())
@@ -126,11 +127,11 @@ export class Acq {
    */
   static async raw (
     {
-      title, url, params,
+      title,
+      url, params, configs,
       loc, args, fields
     },
     { to, spin = true },
-    configs
   ) {
     let spn
     if (spin) spn = ora().start(Xr('raw', title).params(params |> deco).args(args |> deco).toString())
