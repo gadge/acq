@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/hoyeungw/acq.git"
   },
-  "homepage": "https://github.com/hoyeungw/acq#readme"
+  "homepage": "https://github.com/hoyeungw/acq#readme",
+  "dependencies": {
+    "rollup": "^1.31.0"
+  }
 }

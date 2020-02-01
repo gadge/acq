@@ -1,22 +1,25 @@
 {
-  "name": "@acq/enum-ret",
-  "version": "0.1.0",
-  "description": "A util tool",
+  "name": "@acq/environ",
+  "version": "0.0.0",
+  "description": "Environment variable collector",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
+    "build-rollup": "rollup -c",
+    "prepare": "npm run build-rollup",
     "pub": "npm publish",
     "test": "node test"
   },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hoyeungw/acq.git"
+    "url": "git+https://github.com/hoyeungw/repsi.git"
   },
   "keywords": [
     "crawler",
@@ -29,10 +32,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hoyeungw/acq.git"
+    "url": "https://github.com/hoyeungw/repsi.git"
   },
-  "homepage": "https://github.com/hoyeungw/acq#readme",
-  "dependencies": {
-    "rollup": "^1.31.0"
-  }
+  "homepage": "https://github.com/hoyeungw/repsi#readme"
 }

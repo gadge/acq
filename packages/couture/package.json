@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@acq/enum-ret": "^0.1.0",
-    "crostab": "^0.3.0",
-    "veho": "^0.2.14"
+    "crostab": "^0.3.2",
+    "veho": "^0.2.16"
   },
   "repository": {
     "type": "git",

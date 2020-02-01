@@ -15,7 +15,8 @@
     "test": "node test"
   },
   "dependencies": {
-    "crostab": "^0.2.28"
+    "crostab": "^0.3.2",
+    "rollup": "^1.31.0"
   },
   "repository": {
     "type": "git",
