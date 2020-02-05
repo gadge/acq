@@ -18,7 +18,7 @@ export class Environ {
     }
   }
 
-  static ipInfo = (family = 'IPv4') => {
+  static ipInfo (family = 'IPv4') {
     let o = {}
     for (let [key, list] of Object.entries(os.networkInterfaces()))
       for (let info of list)

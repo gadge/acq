@@ -7,9 +7,10 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "build-rollup": "rollup -c",
-    "prepare": "npm run build-rollup",
     "pub": "npm publish",
     "test": "node test"
   },
@@ -30,5 +31,6 @@
   "bugs": {
     "url": "https://github.com/hoyeungw/repsi.git"
   },
-  "homepage": "https://github.com/hoyeungw/repsi#readme"
+  "homepage": "https://github.com/hoyeungw/repsi#readme",
+  "gitHead": "eb0d37b94f8ec64e7b5523510193a3a8db829840"
 }

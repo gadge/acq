@@ -35,5 +35,6 @@
   "bugs": {
     "url": "https://github.com/hoyeungw/acq.git"
   },
-  "homepage": "https://github.com/hoyeungw/acq#readme"
+  "homepage": "https://github.com/hoyeungw/acq#readme",
+  "gitHead": "eb0d37b94f8ec64e7b5523510193a3a8db829840"
 }
