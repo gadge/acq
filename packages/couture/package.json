@@ -1,6 +1,6 @@
 {
   "name": "@acq/couture",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A util tool",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,7 +15,7 @@
     "test": "node test"
   },
   "dependencies": {
-    "@acq/enum-ret": "^0.1.1",
+    "@acq/enum-ret": "^0.1.2",
     "crostab": "^0.3.2",
     "veho": "^0.2.16"
   },
