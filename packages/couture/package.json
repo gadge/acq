@@ -16,8 +16,13 @@
   },
   "dependencies": {
     "@acq/enum-ret": "^0.1.2",
-    "crostab": "^0.3.2",
-    "veho": "^0.2.16"
+    "@analys/enum-tabular-types": "^0.0.8",
+    "@analys/convert": "^0.0.8",
+    "@analys/table-select": "^0.0.8",
+    "@analys/samples-select": "^0.0.8",
+    "@spare/logger": "^0.1.7",
+    "crostab": "^0.3.9",
+    "veho": "^0.2.23"
   },
   "repository": {
     "type": "git",

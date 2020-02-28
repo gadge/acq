@@ -1,1 +1,2 @@
-export { Couture } from './src/couture'
+export { Couture } from './src/Couture'
+export { Converter } from './src/Converter'

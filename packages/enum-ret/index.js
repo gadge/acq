@@ -1,7 +1,7 @@
-export const SAMPLES = 0
-export const JSON = 1
-export const TABLE = 2
-export const ANSI = 3
+const ANSI = -1
+const JSON = 0
+const SAMPLES = 1
+const TABLE = 2
 
 export const ReT = {
   SAMPLES,

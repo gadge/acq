@@ -1,6 +1,8 @@
-import { ReT } from '@acq/enum-ret'
+import { SAMPLES, TABLE } from '@analys/enum-tabular-types'
 import { Samples } from 'veho'
 import { Table } from 'crostab'
+
+
 
 export class Couture {
   /**
@@ -13,11 +15,11 @@ export class Couture {
    */
   static fromSamples (samples, { title, to, fields }) {
     switch (to) {
-      case ReT.json:
+      case JSON:
         return Samples.toTable(samples, { title, fields })
-      case ReT.table:
+      case TABLE:
         return Table.fromSamples(samples, { title, fields })
-      case ReT.samples:
+      case SAMPLES:
       default:
         return Samples.select(samples, fields)
     }
@@ -32,11 +34,11 @@ export class Couture {
    */
   static fromTable (table, { to, fields }) {
     switch (to) {
-      case ReT.json:
+      case JSON:
         return table.select(fields).toJson
-      case ReT.samples:
+      case SAMPLES:
         return table.toSamples(fields)
-      case ReT.table:
+      case TABLE:
       default:
         return table.select(fields)
     }

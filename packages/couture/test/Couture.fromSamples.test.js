@@ -16,7 +16,7 @@ class CoutureTest {
       { date: '2020-01-29', case: 7678, death: 133 },
       { date: '2020-01-30', case: 8124, death: 170 },
     ]
-    Couture.fromSamples(samples, { to: ReT.table }) |> console.log
+    Couture.fromSamples(samples, { to: TABLE }) |> console.log
   }
 }
 
