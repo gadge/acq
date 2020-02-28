@@ -5,7 +5,7 @@ import { SAMPLES, TABLE } from '@analys/enum-tabular-types'
 import { GP } from 'elprimero'
 import { Xr } from '@spare/xr'
 import { deco } from '@spare/deco'
-import { logger, says } from '@spare/logger'
+import { logger } from '@spare/logger'
 import { reqArgv, respArgv } from '../utils/argv'
 import { bool } from '../utils/bool'
 
