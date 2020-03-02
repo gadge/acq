@@ -1,6 +1,6 @@
 {
   "name": "@acq/couture",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A util tool",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,7 +15,7 @@
     "test": "node test"
   },
   "dependencies": {
-    "@acq/enum-ret": "^0.1.4",
+    "@acq/enum-ret": "^0.1.5",
     "@analys/convert": "^0.0.8",
     "@analys/enum-tabular-types": "^0.0.8",
     "@analys/samples-select": "^0.0.8",
