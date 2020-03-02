@@ -2,7 +2,7 @@ import ora from 'ora'
 import axios from 'axios'
 import { bool } from '@acq/bool'
 import { Converter } from '@acq/couture'
-import { SAMPLES, TABLE } from '@analys/enum-tabular-types'
+import { TABLE } from '@analys/enum-tabular-types'
 import { reqArgv, respArgv } from '../utils/argv'
 import { logErr } from './logError'
 
