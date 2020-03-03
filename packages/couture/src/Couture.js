@@ -1,33 +1,34 @@
-import { SAMPLES, TABLE } from '@analys/enum-tabular-types'
-import { Samples } from 'veho'
-import { Table } from 'crostab'
+import { samplesToTable, tableToSamples } from '@analys/convert'
+import { samplesSelect } from '@analys/samples-select'
+import { SAMPLES, TABLE, JSON } from '@analys/enum-tabular-types'
 
-
-
+/**
+ * @typedef {string|number} str
+ */
 export class Couture {
   /**
    *
    * @param {Object[]} samples
    * @param {string} title
    * @param {number} to
-   * @param {string[]} [fields]
+   * @param {str[]|[str,str][]} [fields]
    * @returns {(Table|{head: *[], rows: *[][]}|Object[]|*)}
    */
   static fromSamples (samples, { title, to, fields }) {
     switch (to) {
       case JSON:
-        return Samples.toTable(samples, { title, fields })
+        return samplesToTable(samples, fields)
       case TABLE:
-        return Table.fromSamples(samples, { title, fields })
+        return samplesToTable(samples, fields)
       case SAMPLES:
       default:
-        return Samples.select(samples, fields)
+        return samplesSelect(samples, fields)
     }
   }
 
   /**
    *
-   * @param {Table} table
+   * @param {TableObject} table
    * @param {number} to
    * @param {string[]} [fields]
    * @returns {(Table|{head: *[], rows: *[][]}|Object[]|*)}
@@ -35,12 +36,12 @@ export class Couture {
   static fromTable (table, { to, fields }) {
     switch (to) {
       case JSON:
-        return table.select(fields).toJson
+        return Table.from(table).select(fields).toJson()
       case SAMPLES:
-        return table.toSamples(fields)
+        return tableToSamples(table, fields)
       case TABLE:
       default:
-        return table.select(fields)
+        return Table.from(table).select(fields)
     }
   }
 }

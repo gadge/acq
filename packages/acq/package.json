@@ -17,13 +17,13 @@
   "dependencies": {
     "@acq/bool": "^0.1.6",
     "@acq/couture": "^0.1.5",
-    "@analys/enum-tabular-types": "^0.0.8",
+    "@analys/enum-tabular-types": "^0.0.10",
+    "@palett/says": "^0.0.12",
     "@spare/deco": "^0.1.7",
     "@spare/logger": "^0.1.7",
     "@spare/xr": "^0.1.7",
-    "axios": "^0.19.2",
-    "elprimero": "^0.1.45",
-    "ora": "^4.0.3"
+    "@valjoux/timestamp": "^0.0.5",
+    "axios": "^0.19.2"
   },
   "repository": {
     "type": "git",
@@ -45,6 +45,6 @@
   "homepage": "https://github.com/hoyeungw/acq#readme",
   "gitHead": "eb0d37b94f8ec64e7b5523510193a3a8db829840",
   "devDependencies": {
-    "@analys/table-init": "^0.0.8"
+    "@analys/table-init": "^0.0.10"
   }
 }

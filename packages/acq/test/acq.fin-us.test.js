@@ -1,8 +1,6 @@
-import { SAMPLES, ANSI, TABLE } from '@analys/enum-tabular-types'
+import { SAMPLES, TABLE } from '@analys/enum-tabular-types'
 import { Acq } from '../src/Acq'
-import { delogger } from '@spare/deco'
-import { deco, decoTable, decoVector, logger, says } from '@spare/logger'
-import { matchSlice } from '@analys/table-init'
+import { deco, decoTable, says } from '@spare/logger'
 
 const USTechs = ['AAPL', 'MSFT', 'FB', 'GOOG', 'AMZN', 'NVDA', 'AMD', 'CRM', 'QCOM', 'TSM', 'INTC']
 const CNConcepts = ['BABA', 'NTES', 'JD', 'BIDU', 'PDD', 'EDU', 'TME', 'IQ', 'YUMC', 'LK', 'BILI']

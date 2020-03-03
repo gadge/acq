@@ -1,8 +1,8 @@
-import ora from 'ora'
 import axios from 'axios'
 import { bool } from '@acq/bool'
 import { Converter } from '@acq/couture'
 import { TABLE } from '@analys/enum-tabular-types'
+import { says } from '@palett/says'
 import { reqArgv, respArgv } from '../utils/argv'
 import { logErr } from './logError'
 
@@ -39,17 +39,17 @@ export class Acq {
     from, to,
     ansi = false, spin = true, method = GET
   }) {
-    let spn
-    if (spin) spn = ora().start(reqArgv(title, params, data, configs, args))
+    if (spin) reqArgv(title, params, data, configs, args) |> says[title]
     return await
       axios({ url, method, params, data, ...configs })
         .then(resp => {
           let fit = prep(resp.data, args)
           let converted = Converter(from, to, bool(ansi))(fit, fields)
           if (to === TABLE) converted = Object.assign({ title }, converted)
-          return (spn?.succeed(respArgv(title, url, params, resp)), converted)
+          if (spin) respArgv(title, url, params, resp) |> says[title]
+          return converted
         })
-        .catch(err => (spn?.fail(err.message), logErr(err, to, ansi)))
+        .catch(err => (says[title](err.message), logErr(err, to, ansi)))
   }
 
   /**
@@ -72,15 +72,15 @@ export class Acq {
     prep, args,
     spin = true, method = GET
   }) {
-    let spn
-    if (spin) spn = ora().start(reqArgv(title, params, data, configs, args))
+    if (spin) reqArgv(title, params, data, configs, args) |> says[title]
     return await
       axios({ url, method, params, data, ...configs })
         .then(resp => {
           const fit = prep(resp.data, args)
-          return (spn?.succeed(respArgv(title, url, params, resp)), fit)
+          if (spin) (respArgv(title, url, params, resp)) |> says[title]
+          return fit
         })
-        .catch(err => (spn?.fail(err.message), logErr(err)))
+        .catch(err => (says[title](err.message), logErr(err)))
   }
 }
 
