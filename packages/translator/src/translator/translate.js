@@ -1,4 +1,5 @@
 export const translate = (word, dict) => {
-  for (let [_fr, _to] of dict) word = word.replace(_fr, _to)
+  for (let [curr, proj] of dict) word = word.replace(curr, proj)
   return word.trim()
 }
+

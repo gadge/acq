@@ -1,4 +1,4 @@
-import { enAbrFin } from '../assets/enAbr.fin'
+import { enAbrFin } from '../src/assets/enAbr.fin'
 
 export const enToAbrDictLcher = (option) => (
   enAbrFin[option]

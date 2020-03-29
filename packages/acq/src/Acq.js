@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { bool } from '@acq/bool'
+import { bool } from '@typen/bool'
 import { Converter } from '@acq/couture'
 import { TABLE } from '@analys/enum-tabular-types'
 import { says } from '@palett/says'

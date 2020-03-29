@@ -1,6 +1,7 @@
 import { logger, xr } from '@spare/logger'
-import { bool } from '../utils/bool'
+import { bool } from '@typen/bool'
 import { deco } from '@spare/deco'
+import { says } from '@palett/says'
 
 const candidates = {
   str_true: 'true',
@@ -14,5 +15,5 @@ const candidates = {
 }
 
 for (let [key, candidate] of Object.entries(candidates)) {
-  xr().value(candidate |> deco).parsed(bool(candidate)).original(key) |> logger
+  xr().value(candidate |> deco).parsed(bool(candidate)) |> says[key]
 }
