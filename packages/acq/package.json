@@ -1,6 +1,6 @@
 {
   "name": "@acq/acq",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A util tool",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,7 +15,7 @@
     "test": "node test"
   },
   "dependencies": {
-    "@acq/couture": "^0.2.0",
+    "@acq/couture": "^0.2.1",
     "@analys/enum-tabular-types": "^0.3.3",
     "@palett/says": "^0.1.5",
     "@spare/deco": "^0.6.3",
