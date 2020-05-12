@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/hoyeungw/acq#readme",
   "dependencies": {
-    "rollup": "^2.2.0"
+    "rollup": "^2.9.1"
   },
   "gitHead": "eb0d37b94f8ec64e7b5523510193a3a8db829840"
 }

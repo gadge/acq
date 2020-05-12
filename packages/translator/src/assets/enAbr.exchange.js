@@ -11,6 +11,6 @@ export const enAbrExchange = [
   [/total /gi, 't '],
   [/market /gi, 'mkt'],
   [/turnover/gi, 'tnv'],
-  [/in (\d*?) days/gi, (str, p1, offset, s) => `d(${p1})`]
+  [/in (\d*?) days/gi, (_, n) => `d(${n})`]
 ]
   .sort(([a], [b]) => String(b).length - String(a).length)

@@ -3,8 +3,8 @@ import { bool } from '@typen/bool'
 import { Converter } from '@acq/couture'
 import { TABLE } from '@analys/enum-tabular-types'
 import { says } from '@palett/says'
-import { reqArgv, respArgv } from '../utils/argv'
 import { logErr } from './logError'
+import { reqArgv, respArgv } from '../utils/argv'
 
 /**
  * @typedef {{head:*[],rows:*[][]}} TableObject
@@ -27,7 +27,7 @@ export class Acq {
    * @param {number} from - samples: 1, table: 2
    * @param {number} [to] - samples: 1, table: 2
    * @param {boolean|string} [ansi=false]
-   * @param {boolean} [spin=true]
+   * @param {boolean} [spin]
    * @param {string} [method='get']
    *
    * @returns {Promise<{head:*[],rows:*[][]}|Table|Object[]>}
@@ -37,7 +37,7 @@ export class Acq {
     url, params, data, configs,
     prep, args, fields,
     from, to,
-    ansi = false, spin = true, method = GET
+    ansi, spin, method = GET
   }) {
     if (spin) reqArgv(title, params, data, configs, args) |> says[title]
     return await
@@ -61,7 +61,7 @@ export class Acq {
    * @param {Object} [configs] - rest configs passed to axios
    * @param {Function|function(*,?Object):(Samples|TableObject)} prep - transform response.data to Samples|TableObject
    * @param {Object} [args] - arguments passed to prep as 2nd parameter object
-   * @param {boolean} [spin=true]
+   * @param {boolean} [spin]
    * @param {string} [method='get']
    *
    * @returns {Promise<{head:*[],rows:*[][]}|Table|Object[]>}
@@ -70,7 +70,7 @@ export class Acq {
     title,
     url, params, data, configs,
     prep, args,
-    spin = true, method = GET
+    spin, method = GET
   }) {
     if (spin) reqArgv(title, params, data, configs, args) |> says[title]
     return await
