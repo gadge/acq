@@ -12,10 +12,10 @@ const
 
 export const reqArgv = (title, params, data, configs, args) =>
   Xr('acq', title)
-    [PARAMS]((params || '') |> deco)
-    [DATA]((data || '') |> deco)
-    [CONFIGS]((configs || '')|> deco)
-    [ARGS]((args || '') |> deco).toString()
+    [PARAMS]((params ?? '') |> deco)
+    [DATA]((data ?? '') |> deco)
+    [CONFIGS]((configs ?? '')|> deco)
+    [ARGS]((args ?? '') |> deco).toString()
 
 export const respArgv = (title, url, params, resp) => {
   return Xr('acq', title)

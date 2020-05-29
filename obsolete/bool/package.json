@@ -15,7 +15,7 @@
     "test": "node test"
   },
   "dependencies": {
-    "@typen/enums": "^0.1.0"
+    "@typen/enums": "^0.1.4"
   },
   "repository": {
     "type": "git",
