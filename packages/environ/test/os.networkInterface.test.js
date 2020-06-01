@@ -1,9 +1,9 @@
-import os from 'os'
-import { deco, logger } from 'xbrief'
+import { deca, logger } from '@spare/logger'
+import os               from 'os'
 
 export class OsNetworkInterfaceTest {
   static test () {
-    os.networkInterfaces() |> (_ => deco(_, { vu: 3 })) |> logger
+    os.networkInterfaces() |> deca({ vo: 3 }) |> logger
   }
 }
 
