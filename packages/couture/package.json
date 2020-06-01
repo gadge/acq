@@ -20,7 +20,7 @@
     "@analys/enum-tabular-types": "^0.3.3",
     "@analys/samples-select": "^0.3.3",
     "@analys/table-select": "^0.3.3",
-    "@spare/logger": "^0.7.2"
+    "@spare/logger": "^0.7.9"
   },
   "repository": {
     "type": "git",

@@ -14,6 +14,9 @@
     "pub": "npm publish",
     "test": "node test"
   },
+  "dependencies": {
+    "os": "^0.1.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hoyeungw/repsi.git"
