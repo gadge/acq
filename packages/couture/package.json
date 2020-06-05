@@ -16,11 +16,11 @@
   },
   "dependencies": {
     "@acq/enum-ret": "^0.2.2",
-    "@analys/convert": "^0.3.3",
-    "@analys/enum-tabular-types": "^0.3.3",
-    "@analys/samples-select": "^0.3.3",
-    "@analys/table-select": "^0.3.3",
-    "@spare/logger": "^0.7.9"
+    "@analys/convert": "^0.3.5",
+    "@analys/enum-tabular-types": "^0.3.5",
+    "@analys/samples-select": "^0.3.5",
+    "@analys/table-select": "^0.3.5",
+    "@spare/logger": "^0.7.10"
   },
   "repository": {
     "type": "git",

@@ -1,10 +1,10 @@
-import axios from 'axios'
-import { bool } from '@typen/bool'
-import { Converter } from '@acq/couture'
-import { TABLE } from '@analys/enum-tabular-types'
-import { says } from '@palett/says'
-import { logErr } from './logError'
+import { Converter }         from '@acq/couture'
+import { TABLE }             from '@analys/enum-tabular-types'
+import { says }              from '@palett/says'
+import { bool }              from '@typen/bool'
+import axios                 from 'axios'
 import { reqArgv, respArgv } from '../utils/argv'
+import { logErr }            from './logError'
 
 /**
  * @typedef {{head:*[],rows:*[][]}} TableObject
@@ -17,7 +17,8 @@ export class Acq {
   /**
    *
    * @param {string} [title]
-   * @param {string} url
+   * @param {string} [base] - if provided, url = base + url. 'base' shouldn't end with '/'.
+   * @param {string} url - if 'base' is provided, 'url' should start with '/'.
    * @param {Object} [params] - parameters passed to axios
    * @param {Object} [data] - the data to be sent as the request body (on 'POST' method)
    * @param {Object} [configs] - rest configs passed to axios
@@ -34,11 +35,12 @@ export class Acq {
    */
   static async tabular ({
     title,
-    url, params, data, configs,
+    base, url, params, data, configs,
     prep, args, fields,
     from, to,
     ansi, spin, method = GET
   }) {
+    if (base) url = base + url
     if (spin) reqArgv(title, params, data, configs, args) |> says[title]
     return await
       axios({ url, method, params, data, ...configs })
@@ -55,7 +57,8 @@ export class Acq {
   /**
    *
    * @param {string} [title]
-   * @param {string} url
+   * @param {string} [base] - if provided, url = base + url. 'base' shouldn't end with '/'.
+   * @param {string} url - if 'base' is provided, 'url' should start with '/'.
    * @param {Object} [params] - parameters passed to axios
    * @param {Object} [data] - the data to be sent as the request body (on 'POST' method)
    * @param {Object} [configs] - rest configs passed to axios
@@ -68,10 +71,11 @@ export class Acq {
    */
   static async fetch ({
     title,
-    url, params, data, configs,
+    base, url, params, data, configs,
     prep, args,
     spin, method = GET
   }) {
+    if (base) url = base + url
     if (spin) reqArgv(title, params, data, configs, args) |> says[title]
     return await
       axios({ url, method, params, data, ...configs })
