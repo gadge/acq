@@ -16,11 +16,11 @@
   },
   "dependencies": {
     "@acq/couture": "^0.2.4",
-    "@analys/enum-tabular-types": "^0.3.5",
-    "@palett/says": "^0.2.16",
-    "@spare/deco": "^0.7.10",
-    "@spare/logger": "^0.7.10",
-    "@spare/xr": "^0.7.10",
+    "@analys/enum-tabular-types": "^0.3.6",
+    "@palett/says": "^0.4.2",
+    "@spare/deco": "^0.8.0",
+    "@spare/logger": "^0.8.0",
+    "@spare/xr": "^0.8.0",
     "@typen/bool": "^0.1.5",
     "@valjoux/timestamp": "^0.1.5",
     "axios": "^0.19.2"
@@ -45,6 +45,6 @@
   "homepage": "https://github.com/hoyeungw/acq#readme",
   "gitHead": "eb0d37b94f8ec64e7b5523510193a3a8db829840",
   "devDependencies": {
-    "@analys/table-init": "^0.3.5"
+    "@analys/table-init": "^0.3.6"
   }
 }

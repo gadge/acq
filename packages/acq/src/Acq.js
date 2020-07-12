@@ -42,8 +42,7 @@ export class Acq {
   }) {
     if (base) url = base + url
     if (spin) reqArgv(title, params, data, configs, args) |> says[title]
-    return await
-      axios({ url, method, params, data, ...configs })
+    return await axios({ url, method, params, data, ...configs })
         .then(resp => {
           let fit = prep(resp.data, args)
           let converted = Converter(from, to, bool(ansi))(fit, fields)
@@ -77,8 +76,7 @@ export class Acq {
   }) {
     if (base) url = base + url
     if (spin) reqArgv(title, params, data, configs, args) |> says[title]
-    return await
-      axios({ url, method, params, data, ...configs })
+    return await axios({ url, method, params, data, ...configs })
         .then(resp => {
           const fit = prep(resp.data, args)
           if (spin) (respArgv(title, url, params, resp)) |> says[title]

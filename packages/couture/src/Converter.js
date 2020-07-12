@@ -1,8 +1,8 @@
-import { TABLE, SAMPLES } from '@analys/enum-tabular-types'
-import { tableToSamples, samplesToTable } from '@analys/convert'
-import { tableSelect } from '@analys/table-select'
-import { samplesSelect } from '@analys/samples-select'
-import { deco, decoTable } from '@spare/logger'
+import { samplesToTable, tableToSamples } from '@analys/convert'
+import { SAMPLES, TABLE }                 from '@analys/enum-tabular-types'
+import { samplesSelect }                  from '@analys/samples-select'
+import { tableSelect }                    from '@analys/table-select'
+import { deco, decoTable }                from '@spare/logger'
 
 export const Converter = function (from, to, ansi) {
   const tabularConverter = TabularConverter(from, to)
@@ -19,22 +19,14 @@ export const StringConverter = function (tabularType, ansi) {
 
 export const TabularConverter = function (from, to) {
   if (from === TABLE) {
-    switch (to) {
-      case TABLE:
-        return tableSelect
-      case SAMPLES:
-      default:
-        return tableToSamples
-    }
+    if (to === TABLE) return tableSelect
+    if (to === SAMPLES) return tableToSamples
+    return tableToSamples
   }
   if (from === SAMPLES) {
-    switch (to) {
-      case SAMPLES:
-        return samplesSelect
-      case TABLE:
-      default:
-        return samplesToTable
-    }
+    if (to === SAMPLES) return samplesSelect
+    if (to === TABLE) return samplesToTable
+    return samplesToTable
   }
 }
 
