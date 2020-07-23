@@ -21,7 +21,7 @@
     "@analys/samples-select": "^0.3.6",
     "@analys/table": "^0.3.6",
     "@analys/table-select": "^0.3.6",
-    "@spare/logger": "^0.8.0"
+    "@spare/logger": "^0.8.2"
   },
   "repository": {
     "type": "git",

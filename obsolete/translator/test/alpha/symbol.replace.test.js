@@ -1,4 +1,4 @@
-import { says } from '@spare/logger'
+import { says }            from '@spare/logger'
 import { makeReplaceable } from '../../src/translator/makeReplaceable'
 
 

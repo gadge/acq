@@ -1,4 +1,4 @@
-import { Translator } from '../src/translator/Translator'
+import { Translator }   from '../src/translator/Translator'
 import { logger, says } from '@spare/logger'
 
 const dict = [

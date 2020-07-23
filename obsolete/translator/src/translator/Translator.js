@@ -1,4 +1,4 @@
-import { makeReplaceable } from './makeReplaceable'
+import { makeReplaceable }  from './makeReplaceable'
 import { sortKeysByLength } from '../../utils/sortKeysByLength'
 
 export class Translator {

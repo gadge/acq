@@ -18,9 +18,9 @@
     "@acq/couture": "^0.2.5",
     "@analys/enum-tabular-types": "^0.3.6",
     "@palett/says": "^0.4.2",
-    "@spare/deco": "^0.8.0",
-    "@spare/logger": "^0.8.0",
-    "@spare/xr": "^0.8.0",
+    "@spare/deco": "^0.8.2",
+    "@spare/logger": "^0.8.2",
+    "@spare/xr": "^0.8.2",
     "@typen/bool": "^0.1.5",
     "@valjoux/timestamp": "^0.1.5",
     "axios": "^0.19.2"
