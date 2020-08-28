@@ -1,5 +1,6 @@
-import { Xr } from '@spare/xr'
-import { deco} from '@spare/deco'
+import { deco }       from '@spare/deco'
+import { Xr }         from '@spare/xr'
+import { time }       from '@valjoux/timestamp-pretty'
 import { urlBuilder } from './urlBuilder'
 
 const
@@ -11,15 +12,19 @@ const
   RESP = 'response'
 
 export const reqArgv = (title, params, data, configs, args) =>
-  Xr('acq', title)
-    [PARAMS]((params ?? '') |> deco)
-    [DATA]((data ?? '') |> deco)
-    [CONFIGS]((configs ?? '')|> deco)
-    [ARGS]((args ?? '') |> deco).toString()
+  Xr(time())
+    .p('acq')
+    .br(title)
+    [PARAMS](params ? deco(params) : null)
+    [DATA](data ? deco(data) : null)
+    [CONFIGS](configs ? deco(configs) : null)
+    [ARGS](args ? deco(args) : null).toString()
 
 export const respArgv = (title, url, params, resp) => {
-  return Xr('acq', title)
+  return Xr(time())
+    .p('acq')
+    .br(title)
     .p('fetched from')
     [URL](urlBuilder(url, params))
-    [RESP]([resp.status, resp.statusText] |> deco).toString()
+    [deco(resp.status)](resp.statusText |> deco).toString()
 }

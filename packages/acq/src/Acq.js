@@ -1,5 +1,4 @@
 import { Converter }         from '@acq/couture'
-import { TABLE }             from '@analys/enum-tabular-types'
 import { says }              from '@palett/says'
 import { bool }              from '@typen/bool'
 import axios                 from 'axios'
@@ -33,24 +32,24 @@ export class Acq {
    *
    * @returns {Promise<{head:*[],rows:*[][]}|Table|Object[]>}
    */
-  static async tabular ({
-    title,
-    base, url, params, data, configs,
-    prep, args, fields,
-    from, to,
-    ansi, spin, method = GET
-  }) {
+  static async tabular({
+                         title,
+                         base, url, params, data, configs,
+                         prep, args, fields,
+                         from, to,
+                         ansi, spin, method = GET
+                       }) {
     if (base) url = base + url
     if (spin) reqArgv(title, params, data, configs, args) |> says[title]
     return await axios({ url, method, params, data, ...configs })
-        .then(resp => {
-          let fit = prep(resp.data, args)
-          let converted = Converter(from, to, bool(ansi))(fit, fields)
-          if (to === TABLE) converted = Object.assign({ title }, converted)
-          if (spin) respArgv(title, url, params, resp) |> says[title]
-          return converted
-        })
-        .catch(err => (says[title](err.message), logErr(err, to, ansi)))
+      .then(resp => {
+        const selected = prep(resp.data, args)
+        const converted = Converter(from, to, bool(ansi))(selected, fields)
+        if (title) converted.title = title
+        if (spin) respArgv(title, url, params, resp) |> says[title]
+        return converted
+      })
+      .catch(err => (says[title](err.message), logErr(err, to, ansi)))
   }
 
   /**
@@ -68,21 +67,21 @@ export class Acq {
    *
    * @returns {Promise<{head:*[],rows:*[][]}|Table|Object[]>}
    */
-  static async fetch ({
-    title,
-    base, url, params, data, configs,
-    prep, args,
-    spin, method = GET
-  }) {
+  static async fetch({
+                       title,
+                       base, url, params, data, configs,
+                       prep, args,
+                       spin, method = GET
+                     }) {
     if (base) url = base + url
     if (spin) reqArgv(title, params, data, configs, args) |> says[title]
     return await axios({ url, method, params, data, ...configs })
-        .then(resp => {
-          const fit = prep(resp.data, args)
-          if (spin) (respArgv(title, url, params, resp)) |> says[title]
-          return fit
-        })
-        .catch(err => (says[title](err.message), logErr(err)))
+      .then(resp => {
+        const fit = prep(resp.data, args)
+        if (spin) (respArgv(title, url, params, resp)) |> says[title]
+        return fit
+      })
+      .catch(err => (says[title](err.message), logErr(err)))
   }
 }
 

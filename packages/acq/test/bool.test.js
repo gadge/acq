@@ -1,7 +1,7 @@
-import { logger, xr } from '@spare/logger'
-import { bool } from '@typen/bool'
-import { deco } from '@spare/deco'
 import { says } from '@palett/says'
+import { deco } from '@spare/deco'
+import { xr }   from '@spare/logger'
+import { bool } from '@typen/bool'
 
 const candidates = {
   str_true: 'true',
