@@ -1,9 +1,8 @@
-import { Converter }         from '@acq/couture'
-import { says }              from '@palett/says'
-import { bool }              from '@typen/bool'
-import axios                 from 'axios'
-import { reqArgv, respArgv } from '../utils/argv'
-import { logErr }            from './logError'
+import { Converter }                            from '@acq/couture'
+import { logger }                               from '@spare/logger'
+import { bool }                                 from '@typen/bool'
+import axios                                    from 'axios'
+import { decoError, decoRequest, decoResponse } from '../utils/customDeco'
 
 /**
  * @typedef {{head:*[],rows:*[][]}} TableObject
@@ -40,16 +39,16 @@ export class Acq {
                          ansi, spin, method = GET
                        }) {
     if (base) url = base + url
-    if (spin) reqArgv(title, params, data, configs, args) |> says[title]
+    if (spin) decoRequest({ title, args, configs, data, url, params }) |> logger
     return await axios({ url, method, params, data, ...configs })
-      .then(resp => {
-        const selected = prep(resp.data, args)
+      .then(response => {
+        const selected = prep(response.data, args)
         const converted = Converter(from, to, bool(ansi))(selected, fields)
         if (title) converted.title = title
-        if (spin) respArgv(title, url, params, resp) |> says[title]
+        if (spin) decoResponse({ title, response, url, params, }) |> logger
         return converted
       })
-      .catch(err => (says[title](err.message), logErr(err, to, ansi)))
+      .catch(err => void (decoError(err) |> logger))
   }
 
   /**
@@ -74,14 +73,14 @@ export class Acq {
                        spin, method = GET
                      }) {
     if (base) url = base + url
-    if (spin) reqArgv(title, params, data, configs, args) |> says[title]
+    if (spin) decoRequest({ title, args, configs, data, url, params }) |> logger
     return await axios({ url, method, params, data, ...configs })
-      .then(resp => {
-        const fit = prep(resp.data, args)
-        if (spin) (respArgv(title, url, params, resp)) |> says[title]
+      .then(response => {
+        const fit = prep(response.data, args)
+        if (spin) decoResponse({ title, response, url, params }) |> logger
         return fit
       })
-      .catch(err => (says[title](err.message), logErr(err)))
+      .catch(err => void (decoError(err) |> logger))
   }
 }
 

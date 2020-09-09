@@ -1,6 +1,6 @@
 ## @acq
 
-### An crawler
+### Fetch api for tabulars
 
 ## Usage
 

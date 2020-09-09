@@ -1,9 +1,21 @@
-import { delogger } from '@spare/deco'
-import { reqArgv, respArgv } from '../utils/argv'
+import { delogger }                  from '@spare/deco'
+import { decoRequest, decoResponse } from '../utils/customDeco'
 
-reqArgv('main', { foo: 'a', bar: 'b' }, 256, { a: 1, b: 2 }) |> delogger
+const URL = 'https://www.google.com'
+decoRequest({
+  title: 'main',
+  url: URL,
+  params: { foo: 'a', bar: 'b' },
+  args: undefined,
+  configs: { a: 1, b: 2 }
+}) |> delogger
 
-respArgv('main', 'https://www.google.com', { foo: 'a', bar: 'b' }, {
-  status: 200,
-  statusText: '<html></html>'
+decoResponse({
+  title: 'main',
+  url: URL,
+  params: { foo: 'a', bar: 'b' },
+  response: {
+    status: 200,
+    statusText: '<html></html>'
+  }
 }) |> delogger
