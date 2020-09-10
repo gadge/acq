@@ -1,5 +1,6 @@
 import { SAMPLES, TABLE }    from '@analys/enum-tabular-types'
 import { Table }             from '@analys/table'
+import { deco }              from '@spare/deco'
 import { decoTable, logger } from '@spare/logger'
 import { isNumeric }         from '@typen/num-strict'
 import { pair }              from '@vect/object-init'
@@ -9,6 +10,7 @@ export const BASE = 'http://api.worldbank.org/v2'
 
 export const COUNTRIES = ['USA', 'CHN', 'JPN', 'ECS'] // 'ECS': Europe & Central Asia
 export const GDP = 'NY.GDP.MKTP.CDA', POP = 'SP.POP.TOTL'
+export const EMPLOY_TO_POP = 'SL.EMP.1524.SP.ZS' // unable to get the data
 export const INDICATORS = [GDP, POP]
 export const WITHIN_5_YEARS = [2015, 2020]
 
@@ -16,7 +18,7 @@ export const WITHIN_5_YEARS = [2015, 2020]
 export const getIndicator = async function (
   {
     country = COUNTRIES,
-    indicator = GDP,
+    indicator = EMPLOY_TO_POP,
     year = WITHIN_5_YEARS,
     easy = false, spin = false
   } = {}
@@ -76,6 +78,7 @@ const test = async () => {
       spin: true
     }
   )
+  table |> deco |> logger
   table |> decoTable |> logger
 }
 
