@@ -34,6 +34,6 @@
   "homepage": "https://github.com/hoyeungw/acq#readme",
   "gitHead": "eb0d37b94f8ec64e7b5523510193a3a8db829840",
   "devDependencies": {
-    "@analys/table-init": "^0.4.2"
+    "@analys/table-init": "^0.4.11"
   }
 }
