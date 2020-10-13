@@ -1,13 +1,13 @@
-import babel          from '@rollup/plugin-babel'
-import commonjs       from '@rollup/plugin-commonjs'
-import json           from '@rollup/plugin-json'
-import nodeResolve    from '@rollup/plugin-node-resolve'
+import babel       from '@rollup/plugin-babel'
+import commonjs    from '@rollup/plugin-commonjs'
+import json        from '@rollup/plugin-json'
+import nodeResolve from '@rollup/plugin-node-resolve'
 import { decoObject } from '@spare/logger'
 import fileInfo       from 'rollup-plugin-fileinfo'
 
 const { name, dependencies, main, module } = require(process.cwd() + '/package.json')
 
-console.log('EXECUTING', name, process.cwd())
+console.log('Executing', name, process.cwd())
 console.log('Dependencies', decoObject(dependencies || {}))
 
 const babelPluginOptions = {
@@ -35,12 +35,8 @@ export default [
       { file: module, format: 'esm' }  // ES module (for bundlers) build.
     ],
     plugins: [
-      nodeResolve({
-        preferBuiltins: true
-      }),
-      commonjs({
-        include: /node_modules/,
-      }),
+      nodeResolve({ preferBuiltins: true }),
+      commonjs({ include: /node_modules/, }),
       babel(babelPluginOptions),
       json(),
       fileInfo()
