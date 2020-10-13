@@ -1,6 +1,6 @@
 {
   "name": "@acq/environ",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "description": "Environment variable collector",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
