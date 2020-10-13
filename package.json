@@ -33,7 +33,7 @@
     "@rollup/plugin-commonjs": "^15.1.0",
     "@rollup/plugin-json": "^4.0.3",
     "@rollup/plugin-node-resolve": "^9.0.0",
-    "@spare/logger": "^0.10.2",
+    "@spare/logger": "^0.10.3",
     "@valjoux/strategies": "^0.2.1",
     "lerna": "^3.22.0",
     "rollup": "^2.29.0",
