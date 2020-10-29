@@ -9,7 +9,7 @@ import { Acq }               from '../src/Acq'
 export const BASE = 'http://api.worldbank.org/v2'
 
 export const COUNTRIES = ['USA', 'CHN', 'JPN', 'ECS'] // 'ECS': Europe & Central Asia
-export const GDP = 'NY.GDP.MKTP.CDA', POP = 'SP.POP.TOTL'
+export const GDP = 'NY.GDP.MKTP.CD', POP = 'SP.POP.TOTL'
 export const EMPLOY_TO_POP = 'SL.EMP.1524.SP.ZS' // unable to get the data
 export const INDICATORS = [GDP, POP]
 export const WITHIN_5_YEARS = [2015, 2020]
@@ -28,7 +28,7 @@ export const getIndicator = async function (
   const per_page = countries.length * (yearEntry[1] - yearEntry[0] + 1)
   const table = await Acq.tabular({
     title: indicator,
-    url: `${ BASE }/country/${ countries.join(';') }/indicator/${ indicator }`,
+    url: `${BASE}/country/${countries.join(';')}/indicator/${indicator}`,
     params: ({ date: yearEntry.join(':'), format: 'json', per_page: per_page }),
     prep: ([message, samples]) => {
       // throw new Error('prep exception')

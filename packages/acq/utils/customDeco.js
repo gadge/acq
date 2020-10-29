@@ -1,13 +1,15 @@
 import { LightBlue, Red } from '@palett/cards'
-import { HexDye }         from '@palett/dye'
+import { DyeFactory }     from '@palett/dye'
+import { HEX }            from '@palett/enum-color-space'
 import { deco }           from '@spare/deco'
 import { decoString }     from '@spare/logger'
 import { Xr }             from '@spare/xr'
 import { time }           from '@valjoux/timestamp-pretty'
 import { urlBuilder }     from './urlBuilder'
 
-const errorDye = HexDye(Red.base)
-const passDye = HexDye(LightBlue.lighten_2)
+const dyeFactory = DyeFactory.prep(HEX)
+const errorDye = dyeFactory(Red.base)
+const passDye = dyeFactory(LightBlue.lighten_2)
 
 export const decoRequest = function ({ title, args, configs, data, url, params } = {}) {
   return Xr(time())
