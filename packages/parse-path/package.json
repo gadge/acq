@@ -1,0 +1,39 @@
+{
+  "name": "@acq/parse-path",
+  "version": "0.2.18",
+  "description": "A path parser",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "pub": "npm publish",
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoyeungw/acq.git"
+  },
+  "keywords": [
+    "crawler",
+    "spider"
+  ],
+  "author": {
+    "name": "Hoyeung Wong",
+    "email": "hoyeungw@outlook.com",
+    "url": "https://github.com/hoyeungw"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoyeungw/acq.git"
+  },
+  "homepage": "https://github.com/hoyeungw/acq#readme",
+  "gitHead": "eb0d37b94f8ec64e7b5523510193a3a8db829840",
+  "devDependencies": {
+    "@analys/table-init": "^0.5.2"
+  }
+}

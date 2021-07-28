@@ -1,6 +1,6 @@
 {
   "name": "@acq/url-helper",
-  "version": "0.2.17",
+  "version": "0.2.18",
   "description": "A util tool",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -34,6 +34,6 @@
   "homepage": "https://github.com/hoyeungw/acq#readme",
   "gitHead": "eb0d37b94f8ec64e7b5523510193a3a8db829840",
   "devDependencies": {
-    "@analys/table-init": "^0.4.23"
+    "@analys/table-init": "^0.5.2"
   }
 }
