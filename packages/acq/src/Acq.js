@@ -48,7 +48,7 @@ export class Acq {
         if (spin) decoResponse({ title, response, url, params, }) |> logger
         return converted
       })
-      .catch(err => void (decoError(err) |> logger))
+      .catch(err => void ( decoError(err) |> logger ))
   }
 
   /**
@@ -76,11 +76,11 @@ export class Acq {
     if (spin) decoRequest({ title, args, configs, data, url, params }) |> logger
     return await axios({ url, method, params, data, ...configs })
       .then(response => {
-        const fit = prep(response.data, args)
+        const selected = prep(response.data, args)
         if (spin) decoResponse({ title, response, url, params }) |> logger
-        return fit
+        return selected
       })
-      .catch(err => void (decoError(err) |> logger))
+      .catch(err => void ( decoError(err) |> logger ))
   }
 }
 

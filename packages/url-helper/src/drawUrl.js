@@ -18,8 +18,8 @@ const drawUrl = (
   let url = base
   if (protocol) url = protocol + '://' + url
   if (port) url += ':' + port
-  if (path) url += '/' + (Array.isArray(path) ? path.join('/') : String(path))
-  if (params) url += '?' + Object.entries(params).map(([k, v]) => `${k}=${v}`).join('&')
+  if (path) url += '/' + ( Array.isArray(path) ? path.join('/') : String(path) )
+  if (params) url += '?' + Object.entries(params).map(([ k, v ]) => `${ k }=${ v }`).join('&')
   if (fragment) url += '#' + fragment
   return url
 }

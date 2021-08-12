@@ -1,8 +1,8 @@
-import { Foba as NumVecs } from '@foba/vector-number'
-import { Foba as StrVecs } from '@foba/vector-string'
-import { deco, decoTable, delogger, logger, says } from '@spare/logger'
-import { Converter } from '../src/Converter'
-import { TABLE, SAMPLES } from '@analys/enum-tabular-types'
+import { SAMPLES, TABLE }        from '@analys/enum-tabular-types'
+import { Foba as NumVecs }       from '@foba/vector-number'
+import { Foba as StrVecs }       from '@foba/vector-string'
+import { deco, decoTable, says } from '@spare/logger'
+import { Converter }             from '../src/Converter'
 
 const SP = 'samples', TB = 'table'
 const samples = [

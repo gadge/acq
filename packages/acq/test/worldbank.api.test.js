@@ -8,11 +8,11 @@ import { Acq }               from '../src/Acq'
 
 export const BASE = 'http://api.worldbank.org/v2'
 
-export const COUNTRIES = ['USA', 'CHN', 'JPN', 'ECS'] // 'ECS': Europe & Central Asia
+export const COUNTRIES = [ 'USA', 'CHN', 'JPN', 'ECS' ] // 'ECS': Europe & Central Asia
 export const GDP = 'NY.GDP.MKTP.CD', POP = 'SP.POP.TOTL'
 export const EMPLOY_TO_POP = 'SL.EMP.1524.SP.ZS' // unable to get the data
-export const INDICATORS = [GDP, POP]
-export const WITHIN_5_YEARS = [2015, 2020]
+export const INDICATORS = [ GDP, POP ]
+export const WITHIN_5_YEARS = [ 2015, 2020 ]
 
 
 export const getIndicator = async function (
@@ -25,12 +25,12 @@ export const getIndicator = async function (
 ) {
   const countries = country
   const yearEntry = year
-  const per_page = countries.length * (yearEntry[1] - yearEntry[0] + 1)
+  const per_page = countries.length * ( yearEntry[1] - yearEntry[0] + 1 )
   const table = await Acq.tabular({
     title: indicator,
-    url: `${BASE}/country/${countries.join(';')}/indicator/${indicator}`,
-    params: ({ date: yearEntry.join(':'), format: 'json', per_page: per_page }),
-    prep: ([message, samples]) => {
+    url: `${ BASE }/country/${ countries.join(';') }/indicator/${ indicator }`,
+    params: ( { date: yearEntry.join(':'), format: 'json', per_page: per_page } ),
+    prep: ([ message, samples ]) => {
       // throw new Error('prep exception')
       return samples
     },
@@ -52,10 +52,10 @@ export const distinctIdValue = (idValueList) => {
 export const leanTable = table => {
   if (!table?.head?.length || !table?.rows?.length) return table
   table = Table.from(table)
-  const [{ id: indicatorId, value: indicatorName }] = table.column('indicator')
+  const [ { id: indicatorId, value: indicatorName } ] = table.column('indicator')
   const countries = table
-    .select(['country', 'countryiso3code']).rows
-    .map(([{ value }, iso]) => ({ id: iso, value }))
+    .select([ 'country', 'countryiso3code' ]).rows
+    .map(([ { value }, iso ]) => ( { id: iso, value } ))
     |> distinctIdValue
   table = table
     .renameColumn('countryiso3code', 'iso')

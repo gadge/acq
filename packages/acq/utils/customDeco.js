@@ -1,5 +1,5 @@
 import { LightBlue, Red } from '@palett/cards'
-import { DyeFactory }     from '@palett/dye'
+import { DyeFactory }     from '@palett/dye-factory'
 import { HEX }            from '@palett/enum-color-space'
 import { deco }           from '@spare/deco'
 import { decoString }     from '@spare/logger'
@@ -29,12 +29,11 @@ export const decoResponse = function ({ title, response, url, params }) {
     .toString()
 }
 
-
 export function decoError(error) {
   const { response, message, data, status, headers } = error
-  const [name, info] = response
-    ? [errorDye('axios.error'), ({ data, status, headers } |> deco)]
-    : [errorDye('error'), (error |> deco)]
+  const [ name, info ] = response
+    ? [ errorDye('axios.error'), ( { data, status, headers } |> deco ) ]
+    : [ errorDye('error'), ( error |> deco ) ]
   return Xr(time())[name](info).message(message)
 }
 

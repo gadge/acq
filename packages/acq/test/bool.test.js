@@ -14,6 +14,6 @@ const candidates = {
   emptyStr: ''
 }
 
-for (let [key, candidate] of Object.entries(candidates)) {
+for (let [ key, candidate ] of Object.entries(candidates)) {
   xr().value(candidate |> deco).parsed(bool(candidate)) |> says[key]
 }

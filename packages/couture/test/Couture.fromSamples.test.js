@@ -1,8 +1,7 @@
-import { ReT } from '@acq/enum-ret'
 import { Couture } from '..'
 
 class CoutureTest {
-  static test () {
+  static test() {
     const samples = [
       { date: '2020-01-20', case: 278, death: 6 },
       { date: '2020-01-21', case: 326, death: 6 },

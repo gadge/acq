@@ -11,11 +11,11 @@ export const candidates = {
   gamma: {
     base: 'baidu.com',
     params: { apikey: 'demo', format: 'json' },
-    rest: { protocol: 'https', port: '80', path: [1, 3, 60] }
+    rest: { protocol: 'https', port: '80', path: [ 1, 3, 60 ] }
   }
 }
 
-for (const [key, { base, params, rest }] of Object.entries(candidates)) {
+for (const [ key, { base, params, rest } ] of Object.entries(candidates)) {
   drawUrl.call(null, base, params, rest,) |> decoString |> says[key]
 }
 
