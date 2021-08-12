@@ -1,6 +1,6 @@
 {
-  "name": "@acq/parse-path",
-  "version": "0.2.18",
+  "name": "@acq/path",
+  "version": "0.2.19",
   "description": "A path parser",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
