@@ -15,7 +15,7 @@
     "test": "node test"
   },
   "dependencies": {
-    "os": "^0.1.1"
+    "os": "^0.1.2"
   },
   "repository": {
     "type": "git",
