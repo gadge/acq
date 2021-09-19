@@ -28,7 +28,7 @@
     "@typen/bool": "^0.1.17",
     "@valjoux/timestamp": "^0.3.7",
     "@valjoux/timestamp-pretty": "^0.3.7",
-    "axios": "^0.21.1"
+    "axios": "^0.21.4"
   },
   "devDependencies": {
     "@analys/enum-join-modes": "^0.5.2",
@@ -36,8 +36,8 @@
     "@analys/enum-tabular-types": "^0.5.2",
     "@analys/table": "^0.5.2",
     "@analys/table-init": "^0.5.2",
-    "@aryth/bound-vector": "^0.3.23",
-    "@aryth/math": "^0.3.23",
+    "@aryth/bound-vector": "^0.3.26",
+    "@aryth/math": "^0.3.26",
     "@spare/cite": "^0.12.4",
     "@spare/enum-chars": "^0.12.4",
     "@spare/tap": "^0.12.4",
