@@ -1,1 +1,1 @@
-export { Acq } from './src/Acq'
+export { Chrome } from './src/Chrome'
