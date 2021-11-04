@@ -3,7 +3,7 @@ import { delogger }      from '@spare/deco'
 import { Chrome }        from '../src/Chrome'
 
 const test = async () => {
-  const result = await Chrome.parallelOpenPages({
+  const result = await Chrome.evalPages({
       urls: [
         'https://en.wikiquote.org/wiki/Paul_Krugman',
         'https://en.wikiquote.org/wiki/Franco_Modigliani',

@@ -21,8 +21,8 @@ export class Chrome {
   //   headless: false,
   //   slowMo: 250,// slow down by 250ms
   // }
-  async openBrowser(options = {}) {
-    this.browser = await puppeteer.launch(options)
+  async openBrowser(browserOptions = {}) {
+    this.browser = await puppeteer.launch(browserOptions)
     return this
   }
 
@@ -32,15 +32,15 @@ export class Chrome {
   }
 
 
-  async newTab(url) {
+  async newTab(url, options) {
     const page = await this.browser.newPage()
-    if (url) await page.goto(url)
+    if (url) await page.goto(url, options)
     return page
   }
 
-  async openTabs(info) {
+  async openTabs(info, options) {
     if (typeof info === NUM) return await Promise.all(init(info, () => this.newTab()))
-    if (Array.isArray(info)) return await Promise.all(info.map((url) => this.newTab(url)))
+    if (Array.isArray(info)) return await Promise.all(info.map((url) => this.newTab(url, options)))
     return null
   }
 
@@ -48,8 +48,8 @@ export class Chrome {
     return await Promise.all(tabs.map(page => page.close()))
   }
 
-  async evalPages({ urls, selector, limit, log }) {
-    const pageSelector = PageSelectorFactory.build(selector)
+  async evalPages({ limit, urls, selector, options, log }) {
+    const pageSelector = PageSelectorFactory.build(selector, options)
     const pages = await this.openTabs(limit)
     if (log) Xr().pages(decoFlat(pages.map(pageId))) |> says['chrome'].br('created')
     const contractor = Contractor.build(pageSelector, pages, pageId) // the internal pageSelector use page as 'this'
@@ -61,10 +61,10 @@ export class Chrome {
 }
 
 class PageSelectorFactory {
-  static build(selector) {
+  static build(selector, options) {
     return async function (url) {
       /** @type {Page} */ const page = this
-      await page.goto(url)
+      await page.goto(url, options)
       return await selector(page) // input selector use page as arg
     }
   }
