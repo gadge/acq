@@ -1,7 +1,7 @@
 import { decoFlat, decoString, says, Xr } from '@spare/logger'
 import { NUM }                            from '@typen/enum-data-types'
 import { init }                           from '@vect/vector-init'
-import puppeteer, { Page }                from 'puppeteer'
+import puppeteer                          from 'puppeteer'
 import { Contractor }                     from './Contractor'
 
 /**
