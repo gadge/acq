@@ -1,6 +1,6 @@
 {
   "name": "@acq/chrome",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "A util tool",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -18,7 +18,7 @@
     "@spare/logger": "^0.12.4",
     "@typen/enum-data-types": "^0.1.17",
     "@vect/vector-init": "^0.4.9",
-    "puppeteer": "^10.4.0"
+    "puppeteer": "^11.0.0"
   },
   "repository": {
     "type": "git",
