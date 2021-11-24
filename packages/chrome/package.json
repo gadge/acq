@@ -1,6 +1,6 @@
 {
   "name": "@acq/chrome",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "A util tool",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,7 +15,7 @@
     "test": "node test"
   },
   "dependencies": {
-    "@spare/logger": "^0.12.4",
+    "@spare/logger": "^0.12.5",
     "@typen/enum-data-types": "^0.1.17",
     "@vect/vector-init": "^0.4.9",
     "puppeteer": "^11.0.0"
@@ -38,5 +38,5 @@
     "url": "https://github.com/hoyeungw/acq.git"
   },
   "homepage": "https://github.com/hoyeungw/acq#readme",
-  "gitHead": "eb0d37b94f8ec64e7b5523510193a3a8db829840"
+  "gitHead": "f0599bc6cd341abfac99463f945529c8dc16ac8c"
 }
