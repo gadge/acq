@@ -1,35 +1,27 @@
-import { flopGenerator } from '@aryth/rand'
-import { Contractor }         from '@geia/contractor'
-import { decoVector, logger } from '@spare/logger'
-import { init }               from '@vect/vector-init'
-import { Baro }          from 'baro'
-import { ImagePorter }   from './ImagePorter'
+import { Contractor }        from '@geia/contractor'
+import { maxBy }             from '@vect/vector-indicator'
+import { shuffle }           from '@vect/vector-select'
+import { ARTIST_COLLECTION } from '../resources/artistCollection'
+import { ImagePorter }       from './ImagePorter'
 
 export class Gallery {
-  constructor({
-                agentCount,
-                requestHeaders,
-                pathBuilder,
-                barConfig,
-                barLayout
-              }) {
-    const flopper = flopGenerator(ARTIST_COLLECTION, 'no-one')
-    this.progressFactory = Baro.build(barConfig, barLayout)
-    this.agentPool = init(agentCount, i => {
-      return ImagePorter.build({
-        id: flopper.next().value,
-        requestHeaders,
-        pathBuilder,
-        progressFactory: this.progressFactory
+  constructor({ population, headers, path, barFab }) {
+    this.barFab = barFab
+    const names = shuffle(ARTIST_COLLECTION, population)
+    const width = maxBy(names, x => x.length)
+    this.agents = names.map(id => ImagePorter.build({
+        id: id.padEnd(width),
+        headers,
+        path,
+        barFab: this.barFab
       })
-    })
-    this.agentPool.map(x => x.id) |> decoVector |> logger
-    this.contractor = Contractor.build(ImagePorter.prototype.saveImage, this.agentPool)
+    )
+    this.contractor = Contractor.build(ImagePorter.prototype.saveImage, this.agents)
   }
   static build(options) { return new Gallery(options) }
   async saveImages(urls) {
     const results = await this.contractor.takeOrders(urls)
-    this.progressFactory.stop()
+    this.barFab.stop()
     return results
   }
 }
