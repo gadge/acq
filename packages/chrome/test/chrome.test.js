@@ -14,7 +14,7 @@ const wrongPageTest = async () => {
   }
   const results = await chrome.evalPages({ urls, selector, limit: 2, log: true })
   results.length |> logger
-  const isShutDown = await chrome.closeBrowser()
+  const isShutDown = await chrome.close()
   isShutDown |> says['chrome is shut down']
 }
 
