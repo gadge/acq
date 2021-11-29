@@ -13,7 +13,7 @@ console.log('Dependencies', decoObject(dependencies || {}))
 export default [
   {
     input: 'index.js',
-    external: Object.keys(dependencies || {}),
+    external: Object.keys(dependencies ?? {}),
     output: [
       { file: main, format: 'cjs' },  // CommonJS (for Node) build.
       { file: module, format: 'esm' }  // ES module (for bundlers) build.
@@ -28,16 +28,10 @@ export default [
         exclude: 'node_modules/**',
         babelHelpers: 'bundled',
         presets: [
-          [ '@babel/preset-env', { targets: { node: '14' }, loose: true } ]
+          [ '@babel/preset-env', { targets: { node: '16' }, loose: true } ]
         ],
         plugins: [
-          // ['@babel/plugin-proposal-decorators', { legacy: true }],
-          // [ '@babel/plugin-proposal-optional-chaining' ],
-          // [ '@babel/plugin-proposal-nullish-coalescing-operator' ],
           [ '@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' } ],
-          [ '@babel/plugin-proposal-class-properties', { loose: true } ],
-          // [ '@babel/plugin-proposal-private-methods', { loose: true } ],
-          // [ '@babel/plugin-transform-runtime', { helpers: false, } ]
         ]
       }),
       json(),
