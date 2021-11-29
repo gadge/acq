@@ -1,7 +1,7 @@
 import { deco, decoCrostab, logger, says } from '@spare/logger'
 import { strategies }                      from '@valjoux/strategies'
 import { mem }                             from 'systeminformation'
-import { humanScale }                      from '../util'
+import { humanScale }                      from '../src/humanScale'
 
 function humanFileSize(bytes, isDecimal) {
   isDecimal = typeof isDecimal === 'undefined' ? false : isDecimal
