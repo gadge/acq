@@ -28,7 +28,7 @@ export class Contractor {
     const agentStatus = task.then(() => {
       // Xr()
       //   ['agent'](agent |> deco)
-      //   ['agentPool'](this.agentPool |> deco)
+      //   ['agents'](this.agents |> deco)
       //   ['taskAsPromise'](taskAsPromise|> deco)
       //   ['#agentAgenda'](this.#taskAgenda |> deco)
       //   |> says['asyncPool']
