@@ -1,34 +1,22 @@
-import axios       from 'axios'
-import fs          from 'fs'
-import path        from 'path'
-import ProgressBar from 'progress'
+import { Baro }                                   from 'baro'
+import { DEZEEN_REQUEST_HEADERS }                 from '../resources/customRequestHeaders'
+import { DEZEEN_BARO_CONFIG, DEZEEN_BARO_LAYOUT } from '../resources/throbberConfigs'
+import { ImagePorter }                            from '../src/ImagePorter'
+import { dezeenPathBuilder }                      from '../util/pathBuilders'
 
-const DATA = 'data'
 
-export class ImageShow {
-  static saveCollection(urls) {
+// const url = 'https://unsplash.com/photos/AaEQmoufHLk/download?force=true'
+// const url = 'https://en.wikipedia.org/wiki/Coca-Cola#/media/File:6_Coca-Cola_bottles.jpg'
+const url = 'https://static.dezeen.com/uploads/2021/11/nodi-office-white-arkitekter-extra_dezeen_2364_col_1.jpg'
 
-  }
-}
-async function saveImageCollection() {
-  const url = 'https://images.unsplash.com/photo-1504164996022-09080787b6b3?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=markus-spiske-AaEQmoufHLk-unsplash.jpg'
+const progressFactory = Baro.build(DEZEEN_BARO_CONFIG, DEZEEN_BARO_LAYOUT,)
 
-  console.log('Connecting …')
-  const { data, headers } = await axios({ url, method: 'GET', responseType: 'stream' })
-  const length = headers['content-length']
-
-  console.log('Starting download')
-  const progressBar = new ProgressBar('-> [:bar] :percent :etas', {
-    width: 5,
-    complete: '=',
-    incomplete: ' ',
-    renderThrottle: 1,
-    total: parseInt(length)
+const imagePorter = new ImagePorter('003', DEZEEN_REQUEST_HEADERS, dezeenPathBuilder, progressFactory)
+imagePorter.saveImage(url)
+  .then(() => {
+    // multiBar.stop()
+    progressFactory.stop()
   })
 
-  const writer = fs.createWriteStream(path.resolve(process.cwd(), 'images', 'code.jpg'))
-  data.on(DATA, chunk => progressBar.tick(chunk.length))
-  data.pipe(writer)
-}
 
-saveImageCollection().then()
+
