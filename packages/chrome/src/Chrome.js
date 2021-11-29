@@ -9,11 +9,12 @@ import { Contractor }                     from './Contractor'
  */
 export class Chrome {
   /** @type {Browser} */ browser
+  // /** @type {Page} */ pages
   constructor() { }
 
   static async build() {
     const chrome = new Chrome()
-    await chrome.openBrowser()
+    await chrome.open()
     return chrome
   }
 
@@ -21,41 +22,40 @@ export class Chrome {
   //   headless: false,
   //   slowMo: 250,// slow down by 250ms
   // }
-  async openBrowser(browserOptions = {}) {
+  async open(browserOptions = {}) {
     this.browser = await puppeteer.launch(browserOptions)
     return this
   }
 
-  async closeBrowser() {
+  async close() {
     await this.browser.close()
     return !this.browser?.isConnected()
   }
 
-
-  async newTab(url, options) {
+  async openPage(url, options) {
     const page = await this.browser.newPage()
     if (url) await page.goto(url, options)
     return page
   }
 
-  async openTabs(info, options) {
-    if (typeof info === NUM) return await Promise.all(init(info, () => this.newTab()))
-    if (Array.isArray(info)) return await Promise.all(info.map((url) => this.newTab(url, options)))
+  async openPages(info, options) {
+    if (typeof info === NUM) return await Promise.all(init(info, () => this.openPage()))
+    if (Array.isArray(info)) return await Promise.all(info.map((url) => this.openPage(url, options)))
     return null
   }
 
-  async closeTabs(tabs) {
-    return await Promise.all(tabs.map(page => page.close()))
+  async closePages(pages) {
+    return await Promise.all(pages.map(page => page.close()))
   }
 
   async evalPages({ limit, urls, selector, options, log }) {
     const pageSelector = PageSelectorFactory.build(selector, options)
-    const pages = await this.openTabs(limit)
+    const pages = await this.openPages(limit)
     if (log) Xr().pages(decoFlat(pages.map(pageId))) |> says['chrome'].br('created')
     const contractor = Contractor.build(pageSelector, pages, pageId) // the internal pageSelector use page as 'this'
     const samples = await contractor.takeOrders(urls, log)
     if (log) Xr().pages(decoFlat(pages.map(pageId))) |> says['chrome'].br('closing')
-    await this.closeTabs(pages)
+    await this.closePages(pages)
     return samples
   }
 }
