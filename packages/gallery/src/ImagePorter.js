@@ -4,8 +4,8 @@ import { intime, timeout }               from '@valjoux/timeout'
 import axios                             from 'axios'
 import fs                                from 'fs'
 import { promises }                      from 'stream'
-import { ATTEMPT, ERROR, SAVED, STREAM } from '../resources/stages'
-import { StreamNotation }                from './StreamNotation'
+import { ATTEMPT, ERROR, SAVED, STREAM } from '../resources/stages.js'
+import { StreamNotation }                from './StreamNotation.js'
 
 export class ImagePorter {
   constructor(options) {

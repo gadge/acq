@@ -1,5 +1,5 @@
 import { parsePath }    from '@acq/path'
-import { CONTENT_TYPE } from '../resources/headers'
+import { CONTENT_TYPE } from '../resources/headers.js'
 
 export const dezeenPathBuilder = (url, headers) => {
   let { dir, base, ext } = parsePath(url)

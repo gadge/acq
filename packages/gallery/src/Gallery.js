@@ -1,8 +1,8 @@
 import { Contractor }        from '@geia/contractor'
 import { maxBy }             from '@vect/vector-indicator'
 import { shuffle }           from '@vect/vector-select'
-import { ARTIST_COLLECTION } from '../resources/artistCollection'
-import { ImagePorter }       from './ImagePorter'
+import { ARTIST_COLLECTION } from '../resources/artistCollection.js'
+import { ImagePorter }       from './ImagePorter.js'
 
 export class Gallery {
   constructor({ population, headers, path, barFab }) {

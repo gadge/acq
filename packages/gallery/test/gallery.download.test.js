@@ -1,10 +1,11 @@
+import { clear, cursor }                          from '@arpel/escape'
 import { logger }                                 from '@spare/logger'
 import { Baro }                                   from 'baro'
 import { promises }                               from 'fs'
-import { DEZEEN_REQUEST_HEADERS }                 from '../resources/customRequestHeaders'
-import { DEZEEN_BARO_CONFIG, DEZEEN_BARO_LAYOUT } from '../resources/throbberConfigs'
-import { Gallery }                                from '../src/Gallery'
-import { dezeenPathBuilder }                      from '../util/pathBuilders'
+import { DEZEEN_REQUEST_HEADERS }                 from '../resources/customRequestHeaders.js'
+import { DEZEEN_BARO_CONFIG, DEZEEN_BARO_LAYOUT } from '../resources/throbberConfigs.js'
+import { Gallery }                                from '../src/Gallery.js'
+import { dezeenPathBuilder }                      from '../util/pathBuilders.js'
 
 
 const urls = [
@@ -54,9 +55,10 @@ const urls = [
 
 const SRC = process.cwd()
 
-const test = async (urls) => {
-  await promises.mkdir(SRC + '/images', { recursive: true });
-  `>> downloading: ${urls.length}` |> logger
+const download = async (urls) => {
+  process.stdout.write(clear.ENTIRE_SCREEN + cursor.goto(0, 0))
+  await promises.mkdir(SRC + '/images', { recursive: true })
+  logger(`>> downloading: ${urls.length}`)
   const gallery = Gallery.build({
     population: 3,
     headers: DEZEEN_REQUEST_HEADERS,
@@ -66,5 +68,10 @@ const test = async (urls) => {
   await gallery.saveImages(urls)
 }
 
-test(urls).then()
+const test = async () => {
+  await download(urls)
+  await download(urls)
+  await download(urls)
+}
 
+test().then()
