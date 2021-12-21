@@ -28,7 +28,7 @@ export class ImagePorter {
   static build(options) { return new ImagePorter(options) }
 
   async saveImage(url) {
-    const notation = this.barFab.append(StreamNotation.build({ agent: this.id, url, stage: ATTEMPT }))
+    const notation = await this.barFab.append(StreamNotation.build({ agent: this.id, url, stage: ATTEMPT }))
     this.config.url = url
     const response = await intime(this.timeout, axios, this.config, null)
       .then(response => ( notation.setStage(STREAM, response.status), response ))

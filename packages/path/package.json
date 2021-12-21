@@ -18,8 +18,8 @@
     "@aryth/math": "^0.3.26"
   },
   "devDependencies": {
-    "@analys/table-init": "^0.5.2",
-    "systeminformation": "^5.9.15"
+    "@analys/table-init": "^0.5.3",
+    "systeminformation": "^5.9.17"
   },
   "repository": {
     "type": "git",

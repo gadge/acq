@@ -15,10 +15,10 @@
     "test": "node test"
   },
   "dependencies": {
-    "@spare/logger": "^0.12.5",
+    "@spare/logger": "^0.13.2",
     "@typen/enum-data-types": "^0.1.17",
-    "@vect/vector-init": "^0.4.9",
-    "puppeteer": "^11.0.0"
+    "@vect/vector-init": "^0.4.10",
+    "puppeteer": "^13.0.0"
   },
   "repository": {
     "type": "git",

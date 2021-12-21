@@ -21,7 +21,7 @@ export class Gallery {
   static build(options) { return new Gallery(options) }
   async saveImages(urls) {
     const results = await this.contractor.takeOrders(urls)
-    this.barFab.stop()
+    await this.barFab.stop()
     return results
   }
 }

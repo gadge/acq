@@ -2,6 +2,7 @@ node_modules
 .idea
 packages/*/dist
 lerna-debug.log
+images
 .yarn/*
 #!.yarn/cache
 !.yarn/patches
