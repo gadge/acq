@@ -1,6 +1,6 @@
 {
   "name": "@acq/url-helper",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "description": "A util tool",
   "type": "module",
   "main": "dist/index.cjs",
