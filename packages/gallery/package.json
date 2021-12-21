@@ -38,7 +38,7 @@
     "@vect/vector-init": "^0.4.10",
     "@vect/vector-select": "^0.4.10",
     "axios": "^0.24.0",
-    "baro": "^0.0.14",
+    "baro": "^0.0.15",
     "cli-progress": "^3.9.1",
     "puppeteer": "^13.0.0",
     "through2": "^4.0.2"
