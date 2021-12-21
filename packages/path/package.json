@@ -1,6 +1,6 @@
 {
   "name": "@acq/path",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "description": "A path parser",
   "type": "module",
   "main": "dist/index.cjs",
