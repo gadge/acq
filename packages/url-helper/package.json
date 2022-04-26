@@ -2,8 +2,6 @@
   "name": "@acq/url-helper",
   "version": "0.3.11",
   "description": "A util tool",
-  "type": "module",
-  "main": "dist/index.cjs",
   "exports": {
     "import": "./dist/index.js",
     "require": "./dist/index.cjs"
@@ -38,6 +36,6 @@
   "homepage": "https://github.com/hoyeungw/acq#readme",
   "gitHead": "f0599bc6cd341abfac99463f945529c8dc16ac8c",
   "devDependencies": {
-    "@analys/table-init": "^0.5.3"
+    "@analys/table-init": "^0.5.12"
   }
 }

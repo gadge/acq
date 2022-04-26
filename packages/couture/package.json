@@ -2,8 +2,6 @@
   "name": "@acq/couture",
   "version": "0.3.11",
   "description": "A util tool",
-  "type": "module",
-  "main": "dist/index.cjs",
   "exports": {
     "import": "./dist/index.js",
     "require": "./dist/index.cjs"
@@ -20,12 +18,12 @@
   },
   "dependencies": {
     "@acq/enum-ret": "^0.2.2",
-    "@analys/convert": "^0.5.2",
-    "@analys/enum-tabular-types": "^0.5.3",
-    "@analys/samples-select": "^0.5.3",
-    "@analys/table": "^0.5.2",
-    "@analys/table-select": "^0.5.3",
-    "@spare/logger": "^0.13.2"
+    "@analys/convert": "^0.5.12",
+    "@analys/enum-tabular-types": "^0.5.12",
+    "@analys/samples-select": "^0.5.12",
+    "@analys/table": "^0.5.12",
+    "@analys/table-select": "^0.5.12",
+    "@spare/logger": "^0.13.6"
   },
   "repository": {
     "type": "git",

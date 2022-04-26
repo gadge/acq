@@ -2,8 +2,6 @@
   "name": "@acq/chrome",
   "version": "0.3.11",
   "description": "A util tool",
-  "type": "module",
-  "main": "dist/index.cjs",
   "exports": {
     "import": "./dist/index.js",
     "require": "./dist/index.cjs"
@@ -19,10 +17,10 @@
     "test": "node test"
   },
   "dependencies": {
-    "@spare/logger": "^0.13.2",
+    "@spare/logger": "^0.13.6",
     "@typen/enum-data-types": "^0.1.17",
-    "@vect/vector-init": "^0.4.10",
-    "puppeteer": "^13.0.0"
+    "@vect/vector-init": "^0.5.8",
+    "puppeteer": "^13.6.0"
   },
   "repository": {
     "type": "git",
