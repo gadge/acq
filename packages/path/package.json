@@ -2,8 +2,9 @@
   "name": "@acq/path",
   "version": "0.3.12",
   "description": "A path parser",
+  "main": "./dist/index.cjs",
   "exports": {
-    "import": "./dist/index.js",
+    "import": "./dist/index.mjs",
     "require": "./dist/index.cjs"
   },
   "files": [
@@ -17,10 +18,10 @@
     "test": "node test"
   },
   "dependencies": {
-    "@aryth/math": "^0.5.0"
+    "@aryth/math": "^0.5.3"
   },
   "devDependencies": {
-    "@analys/table-init": "^0.5.12",
+    "@analys/table-init": "^0.5.13",
     "systeminformation": "^5.11.14"
   },
   "repository": {

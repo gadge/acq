@@ -2,8 +2,9 @@
   "name": "@acq/environ",
   "version": "0.3.12",
   "description": "Environment variable collector",
+  "main": "./dist/index.cjs",
   "exports": {
-    "import": "./dist/index.js",
+    "import": "./dist/index.mjs",
     "require": "./dist/index.cjs"
   },
   "files": [
