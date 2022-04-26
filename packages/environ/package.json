@@ -1,6 +1,6 @@
 {
   "name": "@acq/environ",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "description": "Environment variable collector",
   "exports": {
     "import": "./dist/index.js",

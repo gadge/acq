@@ -1,6 +1,6 @@
 {
   "name": "@acq/path",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "description": "A path parser",
   "exports": {
     "import": "./dist/index.js",
