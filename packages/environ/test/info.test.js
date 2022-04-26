@@ -1,4 +1,4 @@
-import { deco, logger, logNeL } from 'xbrief'
+// import { deco, logger, logNeL } from 'xbrief'
 import { Environ }              from '../index'
 
 'device' |> logger
