@@ -9,6 +9,11 @@ export function parsePath(path) {
   }
 }
 
+export function parseBase(path) {
+  const ext = extname(path)
+  return basename(path, ext)
+}
+
 export function parsePathMultiExt(path) {
   const ext = basename(path).slice(basename(path).indexOf('.'))
   return {
