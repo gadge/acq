@@ -19,12 +19,12 @@
   },
   "dependencies": {
     "@acq/enum-ret": "^0.2.2",
-    "@analys/convert": "^0.5.13",
-    "@analys/enum-tabular-types": "^0.5.13",
-    "@analys/samples-select": "^0.5.13",
-    "@analys/table": "^0.5.13",
-    "@analys/table-select": "^0.5.13",
-    "@spare/logger": "^0.13.7"
+    "@analys/convert": "^0.6.2",
+    "@analys/enum-tabular-types": "^0.6.2",
+    "@analys/samples-select": "^0.6.2",
+    "@analys/table": "^0.6.2",
+    "@analys/table-select": "^0.6.2",
+    "@spare/logger": "^0.13.16"
   },
   "repository": {
     "type": "git",
