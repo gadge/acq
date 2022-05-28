@@ -1,6 +1,6 @@
 {
   "name": "@acq/path",
-  "version": "0.3.15",
+  "version": "0.3.16",
   "description": "A path parser",
   "main": "./dist/index.cjs",
   "exports": {
