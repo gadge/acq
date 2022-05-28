@@ -18,10 +18,10 @@
     "test": "node test"
   },
   "dependencies": {
-    "@spare/logger": "^0.13.16",
+    "@spare/logger": "^0.14.2",
     "@typen/enum-data-types": "^0.1.19",
-    "@vect/vector-init": "^0.5.23",
-    "puppeteer": "^13.7.0"
+    "@vect/vector-init": "^0.7.11",
+    "puppeteer": "^14.1.1"
   },
   "repository": {
     "type": "git",
