@@ -18,11 +18,11 @@
     "test": "node test"
   },
   "dependencies": {
-    "@aryth/math": "^0.6.0"
+    "@aryth/math": "^0.6.1"
   },
   "devDependencies": {
     "@analys/table-init": "^0.6.14",
-    "systeminformation": "^5.11.15"
+    "systeminformation": "^5.11.16"
   },
   "repository": {
     "type": "git",
