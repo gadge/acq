@@ -1,6 +1,6 @@
 {
   "name": "@acq/environ",
-  "version": "0.3.20",
+  "version": "0.3.21",
   "description": "Environment variable collector",
   "main": "./dist/index.cjs",
   "exports": {
