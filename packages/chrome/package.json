@@ -1,6 +1,6 @@
 {
   "name": "@acq/chrome",
-  "version": "0.3.21",
+  "version": "0.3.22",
   "description": "A util tool",
   "main": "./dist/index.cjs",
   "exports": {
