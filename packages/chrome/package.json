@@ -1,6 +1,6 @@
 {
   "name": "@acq/chrome",
-  "version": "0.3.26",
+  "version": "0.3.27",
   "description": "A util tool",
   "main": "./dist/index.cjs",
   "exports": {
@@ -41,5 +41,5 @@
     "url": "https://github.com/hoyeungw/acq.git"
   },
   "homepage": "https://github.com/hoyeungw/acq#readme",
-  "gitHead": "a38b2bda78079463bc6ecb0e8725b0eef21927b3"
+  "gitHead": "181956d2efd1f5a40126f1d95b505a7a2d1d53e6"
 }
