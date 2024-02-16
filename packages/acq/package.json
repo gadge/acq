@@ -1,6 +1,6 @@
 {
   "name": "@acq/acq",
-  "version": "0.3.30",
+  "version": "0.3.31",
   "description": "A util tool",
   "main": "./dist/index.cjs",
   "exports": {
@@ -18,7 +18,7 @@
     "test": "node test"
   },
   "dependencies": {
-    "@acq/couture": "^0.3.30",
+    "@acq/couture": "^0.3.31",
     "@analys/enum-tabular-types": "^0.6.14",
     "@palett/cards": "^0.11.6",
     "@palett/dye": "^0.11.6",
