@@ -9,7 +9,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@acq/acq@workspace:packages/acq"
   dependencies:
-    "@acq/couture": ^0.3.28
+    "@acq/couture": ^0.3.29
     "@analys/enum-join-modes": ^0.6.14
     "@analys/enum-pivot-mode": ^0.6.14
     "@analys/enum-tabular-types": ^0.6.14
@@ -49,7 +49,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@acq/couture@^0.3.28, @acq/couture@workspace:packages/couture":
+"@acq/couture@^0.3.29, @acq/couture@workspace:packages/couture":
   version: 0.0.0-use.local
   resolution: "@acq/couture@workspace:packages/couture"
   dependencies:
