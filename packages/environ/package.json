@@ -1,6 +1,6 @@
 {
   "name": "@acq/environ",
-  "version": "0.3.22",
+  "version": "0.3.23",
   "description": "Environment variable collector",
   "main": "./dist/index.cjs",
   "exports": {
@@ -38,5 +38,5 @@
     "url": "https://github.com/hoyeungw/repsi.git"
   },
   "homepage": "https://github.com/hoyeungw/repsi#readme",
-  "gitHead": "f0599bc6cd341abfac99463f945529c8dc16ac8c"
+  "gitHead": "a38b2bda78079463bc6ecb0e8725b0eef21927b3"
 }
